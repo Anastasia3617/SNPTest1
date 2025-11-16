@@ -24,7 +24,7 @@
     // появление иконки на hover
     &_hover_ic-search {
         &::before {
-            background-image: url('/src/assets/images/icons/ic-search.svg');
+            background-image: url('assets/images/icons/ic-search.svg');
             @include mixins.responsive-property(background-size, 60, 90);
             background-color: rgba(0, 0, 0, 0.5);
             opacity: 0;
@@ -110,33 +110,33 @@
         background-color: #f4f0e9;
     }
     &_bg_tour-1::before {
-        background-image: url('/src/assets/images/tour_cards/tour-1.jpg');
+        background-image: url('assets/images/tour_cards/tour-1.jpg');
     }
     &_bg_tour-2::before {
-        background-image: url('/src/assets/images/tour_cards/tour-2.jpg');
+        background-image: url('assets/images/tour_cards/tour-2.jpg');
     }
     &_bg_tour-3::before {
-        background-image: url('/src/assets/images/tour_cards/tour-3.jpg');
+        background-image: url('assets/images/tour_cards/tour-3.jpg');
     }
     &_bg_tour-4::before {
-        background-image: url('/src/assets/images/tour_cards/tour-4.jpg');
+        background-image: url('assets/images/tour_cards/tour-4.jpg');
     }
     &_bg_tour-5::before {
-        background-image: url('/src/assets/images/tour_cards/tour-5.jpg');
+        background-image: url('assets/images/tour_cards/tour-5.jpg');
     }
     &_bg_tour-6::before {
-        background-image: url('/src/assets/images/tour_cards/tour-6.jpg');
+        background-image: url('assets/images/tour_cards/tour-6.jpg');
     }
     &_bg_story-1::before {
         background-image:
             linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-            url('/src/assets/images/story_photo/story-photo-1.png');
+            url('assets/images/story_photo/story-photo-1.png');
     }
     &_bg_story-2::before {
-        background-image: url('/src/assets/images/story_photo/story-photo-2.png');
+        background-image: url('assets/images/story_photo/story-photo-2.png');
     }
     &_bg_story-3::before {
-        background-image: url('/src/assets/images/story_photo/story-photo-3.png');
+        background-image: url('assets/images/story_photo/story-photo-3.png');
     }
 }
 

@@ -73,7 +73,7 @@ $form-text-small-l: (
         &_type_select {
             @include mixins.responsive-property(height, 46, 68);
             @include mixins.appearance-none;
-            background-image: url('/src/assets/images/icons/ic-dropdown.svg');
+            background-image: url('assets/images/icons/ic-dropdown.svg');
             background-repeat: no-repeat;
             background-position: right mixins.calc-property(10, 20) center;
             @include mixins.responsive-property(padding-right, 36, 46);
