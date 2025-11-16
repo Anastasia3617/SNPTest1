@@ -1,0 +1,91 @@
+// размеры экранов
+$screen-s: 360;
+$screen-m: 1024;
+$screen-l: 1920;
+$screen-m-px: #{$screen-m}px;
+$screen-l-px: #{$screen-l}px;
+
+// типографика
+$font-size: 16;
+$font-size-l: 20;
+$font-family: 'Roboto', 'Arial', sans-serif;
+
+// текст
+$text: (
+    'font-size': $font-size,
+    'line-height': 142,
+    'letter-spacing': 0,
+);
+$text-l: (
+    'font-size': $font-size-l,
+    'line-height': 142,
+    'letter-spacing': 0,
+);
+
+// большой шрифт
+$text-large: (
+    'font-size': $font-size,
+    'line-height': 142,
+    'letter-spacing': 0,
+);
+$text-large-l: (
+    'font-size': 23,
+    'line-height': 122,
+    'letter-spacing': 0,
+);
+
+// мелкий шрифт
+$text-small: (
+    'font-size': $font-size,
+    'line-height': 142,
+    'letter-spacing': -1,
+);
+$text-small-l: (
+    'font-size': 17,
+    'line-height': 142,
+    'letter-spacing': -1,
+);
+
+// основной заголовок
+$title-large: (
+    'font-size': 34,
+    'line-height': 112,
+    'letter-spacing': 2,
+);
+$title-large-l: (
+    'font-size': 96,
+    'line-height': 109,
+    'letter-spacing': 2,
+);
+
+// заголовок раздела
+$title: (
+    'font-size': 34,
+    'line-height': 112,
+    'letter-spacing': 2,
+);
+$title-l: (
+    'font-size': 59,
+    'line-height': 124,
+    'letter-spacing': 0,
+);
+
+// заголовок карточки
+$title-small: (
+    'font-size': 23,
+    'line-height': 120,
+    'letter-spacing': 4,
+);
+$title-small-l: (
+    'font-size': 35,
+    'line-height': 122,
+    'letter-spacing': 0,
+);
+
+// цвета
+$gray: #a6a6a6;
+$black: #1b1f2b;
+
+// отступы у кнопки текста
+$padding-button-l-r: 20;
+$padding-button-t-b: 7;

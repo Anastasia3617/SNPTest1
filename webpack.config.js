@@ -1,0 +1,52 @@
+const path = require('path');
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+module.exports = {
+    mode: 'development',
+    entry: {
+        filename: path.resolve(__dirname, 'src/index.js'),
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name]_[contenthash].js',
+        clean: true,
+        assetModuleFilename: 'assets/[name][ext]',
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(css|scss)$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            url: false,
+                        },
+                    },
+                    'sass-loader',
+                ],
+            },
+        ],
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            title: 'Путешествия по миру — походы, сплавы, велопрогулки',
+            filename: 'index.html',
+            template: 'src/index.html',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [{ from: 'src/assets', to: 'assets' }],
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name]_[contenthash].css',
+            chunkFilename: '[id].css',
+        }),
+    ],
+};

@@ -1,0 +1,36 @@
+@use '../_utils/variables' as *;
+@use '../_utils/mixins';
+
+.tabbox {
+    display: flex;
+    @include mixins.responsive-property(gap, 50, 106);
+    flex-direction: column;
+    &__tabs {
+        display: flex;
+        @include mixins.responsive-property(gap, 10, 30);
+        justify-content: center;
+        flex-wrap: wrap;
+        font-weight: bold;
+    }
+    &__tab {
+        cursor: pointer;
+        text-decoration-thickness: 2px;
+        @include mixins.responsive-property(text-underline-offset, 4, 10);
+        &:hover {
+            text-decoration-line: underline;
+        }
+    }
+    &__input {
+        display: none;
+        &:checked + .tabbox__tab {
+            text-decoration-line: underline;
+            color: #efa501;
+        }
+    }
+    &__panel {
+        display: none;
+        &_selected {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,1251 @@
+<!doctype html>
+<html class="container-scroll" lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="shortcut icon"
+            href="assets/images/favicon.png"
+            type="image/png" />
+        <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+            media="print"
+            onload="this.media='all'" />
+        <noscript>
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" />
+        </noscript>
+        <title><%= htmlWebpackPlugin.options.title %></title>
+        <meta
+            name="keywords"
+            content="туры, горящие туры, путешествия, сплавы, велопрогулки, авиабилеты, отдых, походы, туры в Европу, туры в Турцию, Туры в Великобританию, путешествия в горы, пустынные сафари" />
+        <meta
+            name="description"
+            content="Откройте мир вместе с нами! Уникальные туры по Европе, Африке и другим континентам. Захватывающие велопрогулки, экстремальные сплавы, покорение горных вершин, пустынные сафари и уникальные экскурсии. Забронируйте своё путешествие уже сегодня!" />
+    </head>
+    <body class="page text text_size_m">
+        <header id="header-page" class="header page__header">
+            <div class="wrapper header__wrapper">
+                <div class="header__inner">
+                    <div class="logo header__logo">
+                        <div class="logo header__logo">
+                            <img
+                                class="logo__image"
+                                src="assets/images/logo.svg"
+                                alt="Логотип турагентства 'Твой тур'" />
+                        </div>
+                    </div>
+                    <nav class="menu header__menu">
+                        <ul class="menu__list">
+                            <li>
+                                <a
+                                    class="link menu__link"
+                                    href="#section-tours">
+                                    Туры
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="link menu__link"
+                                    href="#section-tour-creator">
+                                    Создать тур
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="link menu__link"
+                                    href="#section-reviews">
+                                    Отзывы
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="link menu__link"
+                                    href="#section-story">
+                                    Истории
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <a
+                        class="link link_no-hover"
+                        draggable="false"
+                        href="tel:+79999999999">
+                        +7 999 999 99 99
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main class="main page__main">
+            <section class="promo main__promo">
+                <div class="wrapper">
+                    <div class="promo__inner">
+                        <h1 class="title title_large promo__title">
+                            Идеальные <br />
+                            путешествия <br />
+                            существуют
+                        </h1>
+                        <p class="text promo__subtitle">
+                            Идейные соображения высшего порядка, а также рамки и
+                            место обучения кадров
+                        </p>
+                        <a class="link link_no-hover" href="#section-tours">
+                            <button
+                                class="button button_size_s text text_size_s">
+                                Найти тур
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="tours main__tours" id="section-tours">
+                <div class="wrapper">
+                    <header class="section-header tours__section-header">
+                        <h2 class="title section-header__title">
+                            Выбери свой тур
+                        </h2>
+                    </header>
+                    <div id="tabbox-tours" class="tabbox">
+                        <div class="tabbox__tabs text text_size_l">
+                            <input
+                                class="tabbox__input"
+                                type="radio"
+                                id="tab-popular"
+                                name="tab"
+                                checked />
+                            <label class="tabbox__tab" for="tab-popular">
+                                Популярные
+                            </label>
+                            <input
+                                class="tabbox__input"
+                                type="radio"
+                                id="tab-author"
+                                name="tab" />
+                            <label class="tabbox__tab" for="tab-author">
+                                Авторские
+                            </label>
+                            <input
+                                class="tabbox__input"
+                                type="radio"
+                                id="tab-hike"
+                                name="tab" />
+                            <label class="tabbox__tab" for="tab-hike">
+                                Походы
+                            </label>
+                            <input
+                                class="tabbox__input"
+                                type="radio"
+                                id="tab-rafting"
+                                name="tab" />
+                            <label class="tabbox__tab" for="tab-rafting">
+                                Сплавы
+                            </label>
+                            <input
+                                class="tabbox__input"
+                                type="radio"
+                                id="tab-bike"
+                                name="tab" />
+                            <label class="tabbox__tab" for="tab-bike">
+                                Велопрогулки
+                            </label>
+                        </div>
+                        <div class="tabbox__panels">
+                            <div
+                                tab="tab-popular"
+                                class="tabbox__panel tabbox__panel_selected">
+                                <div class="grid grid_col_3 tours__grid">
+                                    <div class="grid__cell">
+                                        <article class="card-tour">
+                                            <div
+                                                class="wrapper-card wrapper-card_bg_tour-1 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                                <div class="card-tour__inner">
+                                                    <h3
+                                                        class="title title_small card-tour__title">
+                                                        Путешествие в горы
+                                                    </h3>
+                                                    <p class="text text_size_s">
+                                                        от 80 000 руб
+                                                    </p>
+                                                    <button
+                                                        class="button button_text card-tour__button text text_size_l">
+                                                        Подробнее
+                                                        <img
+                                                            class="button__icon"
+                                                            src="assets/images/icons/ic-arrow.svg" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="grid__cell">
+                                        <article class="card-tour">
+                                            <div
+                                                class="wrapper-card wrapper-card_bg_tour-2 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                                <div class="card-tour__inner">
+                                                    <h3
+                                                        class="title title_small card-tour__title">
+                                                        Путешествие в горы
+                                                    </h3>
+                                                    <p class="text text_size_s">
+                                                        от 80 000 руб
+                                                    </p>
+                                                    <button
+                                                        class="button button_text card-tour__button text text_size_l">
+                                                        Подробнее
+                                                        <img
+                                                            class="button__icon"
+                                                            src="assets/images/icons/ic-arrow.svg" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="grid__cell">
+                                        <article class="card-tour">
+                                            <div
+                                                class="wrapper-card wrapper-card_bg_tour-3 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                                <div class="card-tour__inner">
+                                                    <h3
+                                                        class="title title_small card-tour__title">
+                                                        Путешествие в горы
+                                                    </h3>
+                                                    <p class="text text_size_s">
+                                                        от 80 000 руб
+                                                    </p>
+                                                    <button
+                                                        class="button button_text card-tour__button text text_size_l">
+                                                        Подробнее
+                                                        <img
+                                                            class="button__icon"
+                                                            src="assets/images/icons/ic-arrow.svg" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="grid__cell">
+                                        <article class="card-tour">
+                                            <div
+                                                class="wrapper-card wrapper-card_bg_tour-4 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                                <div class="card-tour__inner">
+                                                    <h3
+                                                        class="title title_small card-tour__title">
+                                                        Путешествие в горы
+                                                    </h3>
+                                                    <p class="text text_size_s">
+                                                        от 80 000 руб
+                                                    </p>
+                                                    <button
+                                                        class="button button_text card-tour__button text text_size_l">
+                                                        Подробнее
+                                                        <img
+                                                            class="button__icon"
+                                                            src="assets/images/icons/ic-arrow.svg" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="grid__cell">
+                                        <article class="card-tour">
+                                            <div
+                                                class="wrapper-card wrapper-card_bg_tour-5 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                                <div class="card-tour__inner">
+                                                    <h3
+                                                        class="title title_small card-tour__title">
+                                                        Путешествие в горы
+                                                    </h3>
+                                                    <p class="text text_size_s">
+                                                        от 80 000 руб
+                                                    </p>
+                                                    <button
+                                                        class="button button_text card-tour__button text text_size_l">
+                                                        Подробнее
+                                                        <img
+                                                            class="button__icon"
+                                                            src="assets/images/icons/ic-arrow.svg" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="grid__cell">
+                                        <article class="card-tour">
+                                            <div
+                                                class="wrapper-card wrapper-card_bg_tour-6 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                                <div class="card-tour__inner">
+                                                    <h3
+                                                        class="title title_small card-tour__title">
+                                                        Путешествие в горы
+                                                    </h3>
+                                                    <p class="text text_size_s">
+                                                        от 80 000 руб
+                                                    </p>
+                                                    <button
+                                                        class="button button_text card-tour__button text text_size_l">
+                                                        Подробнее
+                                                        <img
+                                                            class="button__icon"
+                                                            src="assets/images/icons/ic-arrow.svg" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                            <div tab="tab-author" class="tabbox__panel">
+                                <div class="grid grid_col_3 tours__grid">
+                                    <article class="card-tour">
+                                        <div
+                                            class="wrapper-card wrapper-card_bg_tour-5 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                            <div class="card-tour__inner">
+                                                <h3
+                                                    class="title title_small card-tour__title">
+                                                    Путешествие в горы
+                                                </h3>
+                                                <p class="text text_size_s">
+                                                    от 80 000 руб
+                                                </p>
+                                                <button
+                                                    class="button button_text card-tour__button text text_size_l">
+                                                    Подробнее
+                                                    <img
+                                                        class="button__icon"
+                                                        src="assets/images/icons/ic-arrow.svg" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div tab="tab-hike" class="tabbox__panel">
+                                <div class="grid grid_col_3 tours__grid">
+                                    <article class="card-tour">
+                                        <div
+                                            class="wrapper-card wrapper-card_bg_tour-5 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                            <div class="card-tour__inner">
+                                                <h3
+                                                    class="title title_small card-tour__title">
+                                                    Путешествие в горы
+                                                </h3>
+                                                <p class="text text_size_s">
+                                                    от 80 000 руб
+                                                </p>
+                                                <button
+                                                    class="button button_text card-tour__button text text_size_l">
+                                                    Подробнее
+                                                    <img
+                                                        class="button__icon"
+                                                        src="assets/images/icons/ic-arrow.svg" />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div tab="tab-rafting" class="tabbox__panel">
+                                <div class="grid grid_col_3 tours__grid">
+                                    <div class="grid__cell">
+                                        <article class="card-tour">
+                                            <div
+                                                class="wrapper-card wrapper-card_bg_tour-2 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                                <div class="card-tour__inner">
+                                                    <h3
+                                                        class="title title_small card-tour__title">
+                                                        Путешествие в горы
+                                                    </h3>
+                                                    <p class="text text_size_s">
+                                                        от 80 000 руб
+                                                    </p>
+                                                    <button
+                                                        class="button button_text card-tour__button text text_size_l">
+                                                        Подробнее
+                                                        <img
+                                                            class="button__icon"
+                                                            src="assets/images/icons/ic-arrow.svg" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="grid__cell">
+                                        <article class="card-tour">
+                                            <div
+                                                class="wrapper-card wrapper-card_bg_tour-3 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                                <div class="card-tour__inner">
+                                                    <h3
+                                                        class="title title_small card-tour__title">
+                                                        Путешествие в горы
+                                                    </h3>
+                                                    <p class="text text_size_s">
+                                                        от 80 000 руб
+                                                    </p>
+                                                    <button
+                                                        class="button button_text card-tour__button text text_size_l">
+                                                        Подробнее
+                                                        <img
+                                                            class="button__icon"
+                                                            src="assets/images/icons/ic-arrow.svg" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="grid__cell">
+                                        <article class="card-tour">
+                                            <div
+                                                class="wrapper-card wrapper-card_bg_tour-4 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                                <div class="card-tour__inner">
+                                                    <h3
+                                                        class="title title_small card-tour__title">
+                                                        Путешествие в горы
+                                                    </h3>
+                                                    <p class="text text_size_s">
+                                                        от 80 000 руб
+                                                    </p>
+                                                    <button
+                                                        class="button button_text card-tour__button text text_size_l">
+                                                        Подробнее
+                                                        <img
+                                                            class="button__icon"
+                                                            src="assets/images/icons/ic-arrow.svg" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                            <div tab="tab-bike" class="tabbox__panel">
+                                <div class="grid grid_col_3 tours__grid">
+                                    <div class="grid__cell">
+                                        <article class="card-tour">
+                                            <div
+                                                class="wrapper-card wrapper-card_bg_tour-4 wrapper-card_hover_scale wrapper-card_gradient_deg-360">
+                                                <div class="card-tour__inner">
+                                                    <h3
+                                                        class="title title_small card-tour__title">
+                                                        Путешествие в горы
+                                                    </h3>
+                                                    <p class="text text_size_s">
+                                                        от 80 000 руб
+                                                    </p>
+                                                    <button
+                                                        class="button button_text card-tour__button text text_size_l">
+                                                        Подробнее
+                                                        <img
+                                                            class="button__icon"
+                                                            src="assets/images/icons/ic-arrow.svg" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                id="section-tour-creator"
+                class="tour-creator main__tour-creator">
+                <div class="wrapper">
+                    <header class="section-header tour-creator__section-header">
+                        <h2 class="title section-header__title">
+                            Собери свой тур
+                        </h2>
+                        <p class="text text_color_gray">
+                            Идейные соображения высшего порядка, <br />
+                            а также рамки и место обучения кадров
+                        </p>
+                    </header>
+                    <form class="form">
+                        <div class="grid grid_col_2 form__grid">
+                            <div class="grid__cell">
+                                <label class="form__label" for="input-name">
+                                    Имя
+                                </label>
+                                <input
+                                    id="input-name"
+                                    type="text"
+                                    name="name"
+                                    class="form__field text text_size_m"
+                                    placeholder="Введите Ваше имя"
+                                    required />
+                            </div>
+                            <div class="grid__cell">
+                                <label
+                                    class="form__label"
+                                    for="select-direction">
+                                    Направление
+                                </label>
+                                <select
+                                    id="select-direction"
+                                    name="direction"
+                                    required
+                                    class="form__field form__field_type_select text text_size_m">
+                                    <option
+                                        class="form__select-item"
+                                        value=""
+                                        disabled
+                                        selected
+                                        hidden>
+                                        Куда хотите ехать
+                                    </option>
+                                    <option
+                                        class="form__select-item"
+                                        value="destination-1">
+                                        Пункт 1
+                                    </option>
+                                    <option
+                                        class="form__select-item"
+                                        value="destination-2">
+                                        Пункт 2
+                                    </option>
+                                    <option
+                                        class="form__select-item"
+                                        value="destination-3">
+                                        Пункт 3
+                                    </option>
+                                    <option
+                                        class="form__select-item"
+                                        value="destination-4">
+                                        Пункт 4
+                                    </option>
+                                    <option
+                                        class="form__select-item"
+                                        value="destination-5">
+                                        Пункт 5
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="grid__cell">
+                                <label
+                                    class="form__label"
+                                    for="input-email"
+                                    lang="en">
+                                    Email
+                                </label>
+                                <input
+                                    id="input-email"
+                                    type="email"
+                                    name="email"
+                                    lang="en"
+                                    class="form__field text text_size_m"
+                                    placeholder="example@mail.com"
+                                    required
+                                    title="Введите действующий электронный адрес"
+                                    pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" />
+                            </div>
+                            <div class="grid__cell">
+                                <label class="form__label" for="input-tel">
+                                    Телефон
+                                </label>
+                                <input
+                                    id="input-tel"
+                                    type="tel"
+                                    name="tel"
+                                    title="Введите номер в формате +7 (999) 999-99-99"
+                                    class="form__field text text_size_m"
+                                    placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _"
+                                    pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}"
+                                    required />
+                            </div>
+                            <div class="grid__cell">
+                                <label
+                                    class="form__label"
+                                    for="input-date-from">
+                                    Дата от
+                                </label>
+                                <input
+                                    id="input-date-from"
+                                    type="date"
+                                    name="date-from"
+                                    required
+                                    class="form__field form__field_type_date text text_size_m"
+                                    min="2025-11-13" />
+                            </div>
+                            <div class="grid__cell">
+                                <label class="form__label" for="input-date-to">
+                                    Дата до
+                                </label>
+                                <input
+                                    id="input-date-to"
+                                    type="date"
+                                    name="date-to"
+                                    class="form__field form__field_type_date text text_size_m"
+                                    required />
+                            </div>
+                            <div class="grid__cell grid__cell_span_2">
+                                <label
+                                    class="form__label"
+                                    for="textarea-comment">
+                                    Комментарий
+                                </label>
+                                <textarea
+                                    id="textarea-comment"
+                                    name="comment"
+                                    rows="5"
+                                    class="form__field form__field_type_textarea text text_size_m"></textarea>
+                            </div>
+                            <div class="grid__cell grid__cell_span_2">
+                                <label class="form__label">
+                                    Вам есть 18 лет?
+                                </label>
+                                <div class="form__radio-group">
+                                    <label
+                                        class="form__label form__label_hor form__label_align-ver_center">
+                                        <input
+                                            type="radio"
+                                            name="age"
+                                            class="radio"
+                                            required />
+                                        Да
+                                    </label>
+                                    <label
+                                        class="form__label form__label_hor form__label_align-ver_center">
+                                        <input
+                                            type="radio"
+                                            name="age"
+                                            class="radio"
+                                            required />
+                                        Нет
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grid__cell grid__cell_span_2">
+                                <label
+                                    class="form__label form__label_hor form__label_gap_large text text_size_m">
+                                    <input
+                                        type="checkbox"
+                                        name="agreement"
+                                        class="checkbox"
+                                        required />
+                                    <span
+                                        class="text text_color_gray form__text">
+                                        Нажимая кнопку, я принимаю условия
+                                        <a
+                                            class="link link_black link_active_green"
+                                            href="">
+                                            Лицензионного договора
+                                        </a>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="grid__cell grid__cell_span_2">
+                                <div class="form__button-group">
+                                    <a
+                                        class="link link_no-hover"
+                                        href="#section-tours">
+                                        <button
+                                            type="button"
+                                            class="button button_green form__button text text_size_m">
+                                            Найти тур
+                                        </button>
+                                    </a>
+                                    <button
+                                        type="reset"
+                                        class="button button_green-light form__button text text_size_m">
+                                        Сбросить
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section id="section-reviews" class="reviews main__reviews">
+                <div class="wrapper">
+                    <header class="section-header reviews__section-header">
+                        <h2 class="title section-header__title">
+                            Отзывы наших <br />
+                            путешественников
+                        </h2>
+                        <p class="text text_color_gray">
+                            Идейные соображения высшего порядка, <br />
+                            а также рамки и место обучения кадров
+                        </p>
+                    </header>
+                    <div class="grid grid_col_2 reviews__grid">
+                        <div class="grid__cell">
+                            <article class="card-review">
+                                <div class="wrapper-card wrapper-card_bg_beige">
+                                    <div class="card-review__inner">
+                                        <div
+                                            class="card-review__text text text_size_l">
+                                            <p class="card-review__paragraf">
+                                                Идейные соображения высшего
+                                                порядка, а также рамки и место
+                                                обучения кадров обеспечивает
+                                                широкому кругу (специалистов)
+                                                участие в формировании новых
+                                                предложений. Идейные соображения
+                                                высшего порядка, а также начало
+                                                повседневной работы по
+                                                формированию позиции позволяет
+                                                оценить значение модели
+                                                развития.
+                                            </p>
+                                        </div>
+                                        <h3
+                                            class="title title_small card-review__title">
+                                            Мария
+                                        </h3>
+                                        <a
+                                            class="text text_size_s text_color_gray link link_active_green">
+                                            Тур: Вдали от дома
+                                        </a>
+                                        <img
+                                            class="card-review__avatar"
+                                            src="assets/images/review_photo/review-photo-1.jpg" />
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="grid__cell">
+                            <article class="card-review">
+                                <div class="wrapper-card wrapper-card_bg_beige">
+                                    <div class="card-review__inner">
+                                        <div
+                                            class="card-review__text text text_size_l">
+                                            <p class="card-review__paragraf">
+                                                Равным образом постоянный
+                                                количественный рост и сфера
+                                                нашей активности играет важную
+                                                роль в формировании системы
+                                                обучения кадров, соответствует
+                                                насущным потребностям.
+                                            </p>
+                                            <p class="card-review__paragraf">
+                                                Значимость этих проблем
+                                                настолько очевидна, что
+                                                дальнейшее развитие различных
+                                                форм деятельности обеспечивает
+                                                широкому кругу (специалистов)
+                                                участие в формировании новых
+                                                предложений. Повседневная
+                                                практика показывает, что
+                                                реализация намеченных плановых
+                                                заданий в значительной степени
+                                                обуславливает создание модели
+                                                развития.
+                                            </p>
+                                        </div>
+                                        <h3
+                                            class="title title_small card-review__title">
+                                            Павел
+                                        </h3>
+                                        <a
+                                            class="text text_size_s text_color_gray link link_active_green">
+                                            Тур: Путешествие в горы
+                                        </a>
+                                        <img
+                                            class="card-review__avatar"
+                                            src="assets/images/review_photo/review-photo-2.jpg" />
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="photos">
+                <header class="section-header photos__section-header">
+                    <h2 class="title section-header__title">
+                        Фотографии путешествий
+                    </h2>
+                    <p class="text text_color_gray">
+                        Идейные соображения высшего порядка, <br />
+                        а также рамки и место обучения кадров
+                    </p>
+                </header>
+                <div class="grid grid_col_mix photos__grid">
+                    <div class="grid grid_col_2-4 photos__subgrid">
+                        <div class="grid__cell">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <picture>
+                                    <source
+                                        media="(min-width: 1920px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-1-l.png
+                                        " />
+                                    <source
+                                        media="(min-width: 1024px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-1-m.png
+                                        " />
+                                    <img
+                                        class="photos__image"
+                                        src="assets/images/travel_photo/travel-photo-1-s.png"
+                                        alt="Самолет Boeing 757 летит в небе" />
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="grid__cell grid__cell_show_l">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <img
+                                    class="photos__image"
+                                    src="assets/images/travel_photo/travel-photo-2-l.png"
+                                    alt="Вид из палатки на пустынный пейзаж со скалистыми образованиями" />
+                            </div>
+                        </div>
+                        <div class="grid__cell grid__cell_show_m">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <picture>
+                                    <source
+                                        media="(min-width: 1920px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-3-l.png
+                                        " />
+                                    <img
+                                        class="photos__image"
+                                        src="assets/images/travel_photo/travel-photo-3-m.png"
+                                        alt="Турист на вершине горы на фоне яркого заката" />
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="grid__cell">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <picture>
+                                    <source
+                                        media="(min-width: 1920px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-4-l.png
+                                        " />
+                                    <source
+                                        media="(min-width: 1024px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-4-m.png
+                                        " />
+                                    <img
+                                        class="photos__image"
+                                        src="assets/images/travel_photo/travel-photo-4-s.png"
+                                        alt="Туманная дорога в гористой местности" />
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="grid grid_col_3-5 photos__subgrid photos__subgrid_gap_s">
+                        <div class="grid__cell">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <picture>
+                                    <source
+                                        media="(min-width: 1920px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-5-l.png
+                                        " />
+                                    <source
+                                        media="(min-width: 1024px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-5-m.png
+                                        " />
+                                    <img
+                                        class="photos__image"
+                                        src="assets/images/travel_photo/travel-photo-5-s.png"
+                                        alt="Туристы стоят на меловом утёсе с видом на море" />
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="grid__cell grid__cell_show_m">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <picture>
+                                    <source
+                                        media="(min-width: 1920px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-6-l.png
+                                        " />
+                                    <img
+                                        class="photos__image"
+                                        src="assets/images/travel_photo/travel-photo-6-m.png"
+                                        alt="Автотурист изучает маршрут по карте" />
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="grid__cell grid__cell_show_l">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <img
+                                    class="photos__image"
+                                    src="assets/images/travel_photo/travel-photo-7-l.png"
+                                    alt="Деревянный мост с перилами среди густого леса" />
+                            </div>
+                        </div>
+                        <div class="grid__cell">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <picture>
+                                    <source
+                                        media="(min-width: 1920px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-8-l.png
+                                        " />
+                                    <source
+                                        media="(min-width: 1024px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-8-m.png
+                                        " />
+                                    <img
+                                        class="photos__image"
+                                        src="assets/images/travel_photo/travel-photo-8-s.png"
+                                        alt="Автопалатка на стоянке в лесу у озера" />
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="grid__cell">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <picture>
+                                    <source
+                                        media="(min-width: 1920px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-9-l.png
+                                        " />
+                                    <source
+                                        media="(min-width: 1024px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-9-m.png
+                                        " />
+                                    <img
+                                        class="photos__image"
+                                        src="assets/images/travel_photo/travel-photo-9-s.png"
+                                        alt="Улица Хобузепеа в Старом городе Таллина, Эстония" />
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="grid grid_col_2-4 photos__subgrid photos__subgrid_gap_s">
+                        <div class="grid__cell">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <picture>
+                                    <source
+                                        media="(min-width: 1920px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-10-l.png
+                                        " />
+                                    <source
+                                        media="(min-width: 1024px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-10-m.png
+                                        " />
+                                    <img
+                                        class="photos__image"
+                                        src="assets/images/travel_photo/travel-photo-10-s.png"
+                                        alt="Улица Русалок в городе Рай, Англия" />
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="grid__cell">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <picture>
+                                    <source
+                                        media="(min-width: 1920px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-11-l.png
+                                        " />
+                                    <source
+                                        media="(min-width: 1024px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-11-m.png
+                                        " />
+                                    <img
+                                        class="photos__image"
+                                        src="assets/images/travel_photo/travel-photo-11-s.png"
+                                        alt="Турист сидит на пирсе у озера Кёнигсзее среди высоких гор, Германия" />
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="grid__cell grid__cell_show_m">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <picture>
+                                    <source
+                                        media="(min-width: 1920px)"
+                                        srcset="
+                                            assets/images/travel_photo/travel-photo-12-l.png
+                                        " />
+                                    <img
+                                        class="photos__image"
+                                        src="assets/images/travel_photo/travel-photo-12-m.png"
+                                        alt="Район Темпл-Бар в Дублине, Ирландия" />
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="grid__cell grid__cell_show_l">
+                            <div
+                                class="wrapper-card wrapper-card_hover_ic-search">
+                                <img
+                                    class="photos__image"
+                                    src="assets/images/travel_photo/travel-photo-13-l.png"
+                                    alt="Турист плавает на сапборде по водоему в окружении леса" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section-story" class="story main__story">
+                <div class="wrapper">
+                    <header class="section-header story__section-header">
+                        <h2 class="title section-header__title">
+                            Истории путешествий
+                        </h2>
+                        <p class="text text_color_gray">
+                            Идейные соображения высшего порядка, <br />
+                            а также рамки и место обучения кадров
+                        </p>
+                    </header>
+                    <div class="grid story__grid">
+                        <div class="grid__cell">
+                            <article class="card-story">
+                                <div
+                                    class="wrapper-card wrapper-card_bg_story-1 wrapper-card_hover_scale wrapper-card_rotation_180 wrapper-card_gradient_deg-270">
+                                    <div class="card-story__inner">
+                                        <h3
+                                            class="title title_small card-story__title">
+                                            Автостопом в Стамбул
+                                        </h3>
+                                        <div class="card-story__text">
+                                            <p class="card-story__paragraf">
+                                                Идейные соображения высшего
+                                                порядка, а также рамки и место
+                                                обучения кадров обеспечивает
+                                                широкому кругу (специалистов)
+                                                участие в формировании новых
+                                                предложений:
+                                            </p>
+                                            <ul class="list">
+                                                <li class="list__item">
+                                                    вкусная еда
+                                                </li>
+                                                <li class="list__item">
+                                                    дешевый транспорт
+                                                </li>
+                                                <li class="list__item">
+                                                    красивый город.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button
+                                            class="button button_text card-story__button text text_size_l">
+                                            Подробнее
+                                            <img
+                                                class="button__icon"
+                                                src="assets/images/icons/ic-arrow.svg" />
+                                        </button>
+                                        <nav
+                                            class="links-social card-story__links-social">
+                                            <a
+                                                class="links-social__link link"
+                                                lang="en"
+                                                draggable="false">
+                                                telegram
+                                            </a>
+                                            <a
+                                                class="links-social__link link"
+                                                lang="en"
+                                                draggable="false">
+                                                facebook
+                                            </a>
+                                            <a
+                                                class="links-social__link link"
+                                                lang="en"
+                                                draggable="false">
+                                                YouTube
+                                            </a>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="grid__cell">
+                            <article class="card-story">
+                                <div
+                                    class="wrapper-card wrapper-card_bg_story-2 wrapper-card_hover_scale wrapper-card_gradient_deg-270">
+                                    <div class="card-story__inner">
+                                        <h3
+                                            class="title title_small card-story__title">
+                                            Автостопом в Стамбул
+                                        </h3>
+                                        <div class="card-story__text">
+                                            <p class="card-story__paragraf">
+                                                Идейные соображения высшего
+                                                порядка, а также рамки и место
+                                                обучения кадров обеспечивает
+                                                широкому кругу (специалистов)
+                                                участие в формировании новых
+                                                предложений.
+                                            </p>
+                                        </div>
+                                        <button
+                                            class="button button_text card-story__button text text_size_l">
+                                            Подробнее
+                                            <img
+                                                class="button__icon"
+                                                src="assets/images/icons/ic-arrow.svg" />
+                                        </button>
+                                        <nav
+                                            class="links-social card-story__links-social">
+                                            <a
+                                                class="links-social__link link"
+                                                lang="en"
+                                                draggable="false">
+                                                telegram
+                                            </a>
+                                            <a
+                                                class="links-social__link link"
+                                                lang="en"
+                                                draggable="false">
+                                                facebook
+                                            </a>
+                                            <a
+                                                class="links-social__link link"
+                                                draggable="false">
+                                                ВКонтакте
+                                            </a>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="grid__cell">
+                            <article class="card-story">
+                                <div
+                                    class="wrapper-card wrapper-card_bg_story-3 wrapper-card_hover_scale wrapper-card_gradient_deg-270 wrapper-card_rotation_180">
+                                    <div class="card-story__inner">
+                                        <h3
+                                            class="title title_small card-story__title">
+                                            Автостопом в Стамбул
+                                        </h3>
+                                        <div class="card-story__text">
+                                            <p class="card-story__paragraf">
+                                                Идейные соображения высшего
+                                                порядка, а также рамки и место
+                                                обучения кадров обеспечивает
+                                                широкому кругу (специалистов)
+                                                участие в формировании новых
+                                                предложений.
+                                            </p>
+                                        </div>
+                                        <button
+                                            class="button button_text card-story__button text text_size_l">
+                                            Подробнее
+                                            <img
+                                                class="button__icon"
+                                                src="assets/images/icons/ic-arrow.svg" />
+                                        </button>
+                                        <nav
+                                            class="links-social card-story__links-social">
+                                            <a
+                                                class="links-social__link link"
+                                                lang="en"
+                                                draggable="false">
+                                                telegram
+                                            </a>
+                                            <a
+                                                class="links-social__link link"
+                                                lang="en"
+                                                draggable="false">
+                                                facebook
+                                            </a>
+                                            <a
+                                                class="links-social__link link"
+                                                draggable="false">
+                                                ВКонтакте
+                                            </a>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="cta">
+                <div class="cta__inner">
+                    <picture class="cta__picture">
+                        <source
+                            media="(min-width: 1024px)"
+                            srcset="
+                                assets/images/footer_photo/footer-photo-l.png
+                            " />
+                        <img
+                            class="cta__image"
+                            src="assets/images/footer_photo/footer-photo.png"
+                            alt="Деревянные домики у озера на фоне живописных горных вершин" />
+                    </picture>
+                    <div class="cta__text">
+                        <h3 class="title title_small cta__title">
+                            Пора в путешествие <br />
+                            вместе с нами!
+                        </h3>
+                        <p class="text text_color_gray">
+                            Напиши на почту и узнай подробности <br />
+                            на
+                            <a
+                                class="link link_black link_active_green"
+                                href="">
+                                yourtour@gmail.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer page__footer">
+            <div class="wrapper">
+                <div class="footer__ineer">
+                    <p class="text text_color_gray">Наши социальные сети</p>
+                    <nav class="links-social links-social_with-icon">
+                        <a
+                            class="links-social__link link"
+                            lang="en"
+                            draggable="false">
+                            <img
+                                class="links-social__icon"
+                                src="assets/images/icons/ic-telegram.svg" />
+                            telegram
+                        </a>
+                        <a
+                            class="links-social__link link"
+                            lang="en"
+                            draggable="false">
+                            <img
+                                class="links-social__icon"
+                                src="assets/images/icons/ic-fb.svg" />
+                            facebook
+                        </a>
+                        <a
+                            class="links-social__link link"
+                            lang="en"
+                            draggable="false">
+                            <img
+                                class="links-social__icon"
+                                src="assets/images/icons/ic-vk.svg" />
+                            vkontakte
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

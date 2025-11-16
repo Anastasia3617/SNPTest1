@@ -1,0 +1,146 @@
+@use '../_utils/variables' as *;
+@use '../_utils/mixins';
+
+// промоблок
+.promo {
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%),
+        url('/src/assets/images/background-header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    box-sizing: border-box;
+    &__inner {
+        height: 100%;
+        @include mixins.responsive-property(row-gap, 40, 50);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    &__subtitle {
+        @include mixins.values(width, 310, 400, 562);
+    }
+    &__title {
+        margin: 0;
+    }
+}
+
+// заголовок для секций
+.section-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    @include mixins.responsive-property(gap, 20, 30);
+    &__title {
+        margin: 0;
+    }
+}
+
+// блок с турами
+.tours {
+    &__section-header {
+        @include mixins.responsive-property(margin-bottom, 30, 35);
+    }
+    &__grid {
+        color: #ffffff;
+        @include mixins.responsive-property(grid-auto-rows, 318, 531);
+        @include mixins.responsive-property(gap, 18, 30, $screen-m, $screen-l);
+        @media screen and (min-width: 987px) and (max-width: $screen-m-px) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+// блок с формой создания тура
+.tour-creator {
+    &__section-header {
+        @include mixins.responsive-property(margin-bottom, 40, 100);
+    }
+}
+
+// блок с отзывами
+.reviews {
+    &__section-header {
+        @include mixins.responsive-property(margin-bottom, 50, 100);
+    }
+    &__grid {
+        @include mixins.responsive-property(gap, 18, 30, $screen-m, $screen-l);
+    }
+}
+
+// блок с фотографиями
+.photos {
+    &__section-header {
+        @include mixins.responsive-property(margin-bottom, 50, 100);
+    }
+    &__grid {
+        @include mixins.responsive-property(row-gap, 18, 30);
+        @include mixins.values(padding-left, 21, 20, 30);
+        @include mixins.values(padding-right, 21, 20, 30);
+        box-sizing: border-box;
+    }
+    &__subgrid {
+        @include mixins.responsive-property(grid-auto-rows, 110, 301);
+        @include mixins.values(gap, 18, 20, 30);
+        &_gap_s {
+            @include mixins.values(gap, 10, 20, 30);
+        }
+    }
+    &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+// блок с историями
+.story {
+    &__section-header {
+        @include mixins.responsive-property(margin-bottom, 50, 100);
+    }
+    &__grid {
+        color: #ffffff;
+        @include mixins.responsive-property(row-gap, 20, 50);
+        @include mixins.responsive-property(grid-auto-rows, 455, 567);
+    }
+}
+
+// блок cta
+.cta {
+    width: fit-content;
+    margin: auto;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        @media (min-width: 870px) {
+            flex-direction: row;
+        }
+    }
+    &__picture {
+        @include mixins.responsive-property(height, 133, 370);
+    }
+    &__image {
+        height: 100%;
+        width: auto;
+    }
+    &__text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        @media (min-width: 870px) {
+            text-align: start;
+            min-width: 371px;
+        }
+    }
+    &__title {
+        margin: 0;
+    }
+}

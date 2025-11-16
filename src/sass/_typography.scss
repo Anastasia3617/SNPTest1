@@ -1,0 +1,39 @@
+@use './_utils/variables' as *;
+@use './_utils/mixins';
+
+// типографика
+.text {
+    margin: 0;
+    font-family: $font-family;
+    font-optical-sizing: auto;
+    &_size_m {
+        @include mixins.responsive-text($text, $text-l);
+        font-weight: 400;
+    }
+    &_size_l {
+        @include mixins.responsive-text($text-large, $text-large-l);
+        font-weight: 700;
+    }
+    &_size_s {
+        @include mixins.responsive-text($text-small, $text-small-l);
+        font-weight: 400;
+    }
+    &_color_gray {
+        color: $gray;
+    }
+}
+
+// заголовки
+.title {
+    font-weight: 700;
+    @include mixins.responsive-text($title, $title-l);
+    &_large {
+        @include mixins.responsive-text($title-large, $title-large-l);
+    }
+    &_small {
+        @include mixins.responsive-text($title-small, $title-small-l);
+        @media (min-width: $screen-m-px) {
+            font-weight: 500;
+        }
+    }
+}

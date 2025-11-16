@@ -1,0 +1,115 @@
+@use '../_utils/variables' as *;
+@use '../_utils/mixins';
+
+// кнопки
+.button {
+    border: none;
+    border-radius: 10px;
+    @include mixins.responsive-property(padding-top, 12, 15);
+    @include mixins.responsive-property(padding-bottom, 12, 15);
+    @include mixins.responsive-property(padding-left, 29.5, 30);
+    @include mixins.responsive-property(padding-right, 29.5, 30);
+    gap: 10px;
+    background-color: white;
+    color: #1b1f2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        cursor: pointer;
+        background-color: #efa501;
+        color: #ffffff;
+    }
+    &:active {
+        cursor: pointer;
+        background-color: #f8e6be;
+        color: $black;
+    }
+    &_size_s {
+        padding: 5px 20px;
+    }
+
+    // кнопка текст
+    &_text {
+        background: none;
+        color: #ffffff;
+        border-radius: 50px;
+        padding: #{$padding-button-t-b}px #{$padding-button-l-r}px;
+        gap: 16px;
+        font-weight: 700;
+        .button__icon {
+            width: auto;
+            height: 26px;
+        }
+        &:hover {
+            background-color: #286562;
+        }
+        &:active {
+            color: #ffffff;
+            background-color: #efa501;
+        }
+    }
+
+    // зеленая кнопка
+    &_green {
+        background-color: #286562;
+        color: #ffffff;
+        &:hover {
+            color: #ffffff;
+            background-color: #3b7e7b;
+        }
+        &:active {
+            background-color: #627f7e;
+        }
+    }
+    &_green-light {
+        background-color: #e0f0e5;
+        color: #286562;
+        &:hover {
+            color: #286562;
+            background-color: #f1f3f2;
+        }
+        &:active {
+            color: #286562;
+            background-color: #d9dfdb;
+        }
+    }
+}
+
+// радиокнопки
+.radio {
+    @include mixins.appearance-none;
+    margin: 0;
+    @include mixins.responsive-property(width, 20, 26);
+    @include mixins.responsive-property(height, 20, 26);
+    border: 2px solid $black;
+    border-radius: 50%;
+    &:hover {
+        cursor: pointer;
+    }
+    &:checked {
+        background-image: url('/src/assets/images/icons/ic-ellipse.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        @include mixins.responsive-property(background-size, 9, 12);
+    }
+}
+
+// чекбокс
+.checkbox {
+    @include mixins.appearance-none;
+    margin: 0;
+    @include mixins.responsive-property(min-width, 20, 26);
+    @include mixins.responsive-property(height, 20, 26);
+    border: 2px solid $black;
+    border-radius: 4px;
+    &:hover {
+        cursor: pointer;
+    }
+    &:checked {
+        background-image: url('/src/assets/images/icons/ic-check.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        @include mixins.responsive-property(background-size, 9, 13);
+    }
+}

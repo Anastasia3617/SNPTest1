@@ -1,0 +1,288 @@
+@use '../_utils/variables' as *;
+@use '../_utils/mixins';
+
+// обертка для карточки
+.wrapper-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include mixins.responsive-property(border-radius, 20, 50);
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -2;
+    }
+
+    // появление иконки на hover
+    &_hover_ic-search {
+        &::before {
+            background-image: url('/src/assets/images/icons/ic-search.svg');
+            @include mixins.responsive-property(background-size, 60, 90);
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            transform: scale(1);
+        }
+        &:hover {
+            cursor: pointer;
+            &::before {
+                opacity: 0.8;
+                z-index: 1;
+            }
+        }
+    }
+
+    // масштабирование на hover
+    &_hover_scale {
+        &::before {
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+        }
+        &:hover {
+            cursor: pointer;
+            &::before {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    // зеркальное отражение
+    &_rotation_180 {
+        &::before {
+            transform: scaleX(-1) scale(1);
+        }
+        &.wrapper-card_hover_scale {
+            &:hover {
+                &::before {
+                    transform: scaleX(-1) scale(1.2);
+                }
+            }
+        }
+    }
+
+    // градиент
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    &.wrapper-card_hover_scale {
+        &:hover {
+            &::after {
+                transform: scale(1.2);
+            }
+        }
+    }
+    &_gradient_deg-360 {
+        &::after {
+            background-image: linear-gradient(
+                360deg,
+                rgba(0, 0, 0, 0.4) 0%,
+                rgba(0, 0, 0, 0.06) 48.44%,
+                rgba(0, 0, 0, 0.5) 100%
+            );
+        }
+    }
+    &_gradient_deg-270 {
+        &::after {
+            background-image: linear-gradient(
+                270deg,
+                rgba(0, 0, 0, 0) 0.01%,
+                rgba(0, 0, 0, 0.2) 100%
+            );
+        }
+    }
+
+    // картинки
+    &_bg_beige {
+        background-color: #f4f0e9;
+    }
+    &_bg_tour-1::before {
+        background-image: url('/src/assets/images/tour_cards/tour-1.jpg');
+    }
+    &_bg_tour-2::before {
+        background-image: url('/src/assets/images/tour_cards/tour-2.jpg');
+    }
+    &_bg_tour-3::before {
+        background-image: url('/src/assets/images/tour_cards/tour-3.jpg');
+    }
+    &_bg_tour-4::before {
+        background-image: url('/src/assets/images/tour_cards/tour-4.jpg');
+    }
+    &_bg_tour-5::before {
+        background-image: url('/src/assets/images/tour_cards/tour-5.jpg');
+    }
+    &_bg_tour-6::before {
+        background-image: url('/src/assets/images/tour_cards/tour-6.jpg');
+    }
+    &_bg_story-1::before {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+            url('/src/assets/images/story_photo/story-photo-1.png');
+    }
+    &_bg_story-2::before {
+        background-image: url('/src/assets/images/story_photo/story-photo-2.png');
+    }
+    &_bg_story-3::before {
+        background-image: url('/src/assets/images/story_photo/story-photo-3.png');
+    }
+}
+
+// карточка с туром
+$card-tour-padding: 25;
+$card-tour-padding-l: 50;
+
+.card-tour {
+    width: 100%;
+    height: 100%;
+    &__inner {
+        box-sizing: border-box;
+        height: 100%;
+        @include mixins.responsive-property(
+            padding,
+            $card-tour-padding,
+            $card-tour-padding-l
+        );
+    }
+    &__title {
+        margin-top: 0;
+        @include mixins.responsive-property(margin-bottom, 13, 16);
+    }
+    &__button {
+        position: absolute;
+        @include mixins.responsive-property(
+            bottom,
+            $card-tour-padding - $padding-button-t-b,
+            $card-tour-padding-l - $padding-button-t-b
+        );
+        @include mixins.responsive-property(
+            left,
+            $card-tour-padding - $padding-button-l-r,
+            $card-tour-padding-l - $padding-button-l-r
+        );
+    }
+}
+
+// карточка с отзывом
+$card-review-padding: 20;
+$card-review-padding-l: 40;
+.card-review {
+    width: 100%;
+    height: 100%;
+    &__inner {
+        box-sizing: border-box;
+        height: 100%;
+        @include mixins.responsive-property(
+            padding,
+            $card-review-padding,
+            $card-review-padding-l
+        );
+        display: flex;
+        flex-direction: column;
+    }
+    &__text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        @include mixins.responsive-property(gap, 23, 28);
+    }
+    &__paragraf {
+        word-break: break-word;
+        margin: 0;
+        letter-spacing: 0.01px;
+    }
+    &__title {
+        @include mixins.responsive-property(margin-top, 56, 70);
+        margin-bottom: 8px;
+    }
+    &__avatar {
+        position: absolute;
+        @include mixins.responsive-property(
+            bottom,
+            $card-review-padding,
+            $card-review-padding-l
+        );
+        @include mixins.responsive-property(
+            right,
+            $card-review-padding,
+            $card-review-padding-l
+        );
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+    }
+}
+
+// карточка с историей
+$card-story-padding: 30;
+$card-story-padding-l: 60;
+.card-story {
+    width: 100%;
+    height: 100%;
+    &__inner {
+        box-sizing: border-box;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        @include mixins.responsive-property(
+            padding,
+            $card-story-padding,
+            $card-story-padding-l
+        );
+        @include mixins.responsive-property(padding - bottom, 65, 105);
+    }
+    &__title {
+        margin-top: 0;
+        width: 62%;
+        @include mixins.responsive-property(margin-bottom, 20, 37);
+    }
+    &__text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        max-width: 554px;
+        @include mixins.responsive-property(gap, 23, 28);
+    }
+    &__paragraf {
+        margin: 0;
+    }
+    &__button {
+        position: absolute;
+        @include mixins.responsive-property(
+            bottom,
+            $card-story-padding - $padding-button-t-b,
+            $card-story-padding-l - $padding-button-t-b
+        );
+        @include mixins.responsive-property(
+            left,
+            $card-story-padding - $padding-button-l-r,
+            $card-story-padding-l - $padding-button-l-r
+        );
+    }
+    &__links-social {
+        position: absolute;
+        @include mixins.responsive-property(
+            bottom,
+            $card-story-padding,
+            $card-story-padding-l
+        );
+        @include mixins.responsive-property(
+            right,
+            $card-story-padding,
+            $card-story-padding-l
+        );
+        @include mixins.visible(flex);
+    }
+}

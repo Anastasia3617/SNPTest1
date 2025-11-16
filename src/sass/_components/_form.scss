@@ -1,0 +1,122 @@
+@use '../_utils/variables' as *;
+@use '../_utils/mixins';
+
+$form-text-small: (
+    'font-size': $font-size,
+    'line-height': 142,
+    'letter-spacing': 0,
+);
+$form-text-small-l: (
+    'font-size': 17,
+    'line-height': 142,
+    'letter-spacing': -1,
+);
+
+.form {
+    @include mixins.values(padding, 20, 60, 70);
+    @include mixins.values(padding-bottom, 40, 60, 70);
+    background-color: #ffffff;
+    @include mixins.responsive-property(border-radius, 30, 50);
+    &__grid {
+        @include mixins.responsive-property(row-gap, 30, 33);
+        @include mixins.responsive-property(
+            column-gap,
+            20,
+            30,
+            $screen-m,
+            $screen-l
+        );
+    }
+    &__label {
+        display: inline-block;
+        margin-bottom: 8px;
+        &_hor {
+            margin: 0;
+            display: flex;
+            @include mixins.responsive-property(gap, 10, 11);
+            @media (min-width: 690px) {
+                align-items: center;
+            }
+        }
+        &_gap_large {
+            @include mixins.values(gap, 10, 11, 19);
+        }
+        &_align-ver_center {
+            align-items: center;
+        }
+    }
+    &__text {
+        font-weight: 400;
+        @include mixins.responsive-text($form-text-small, $form-text-small-l);
+    }
+    &__field {
+        color: inherit;
+        border-radius: 10px;
+        @include mixins.responsive-property(padding, 9, 19);
+        border: 1px solid #f4f0e9;
+        background-color: #f9f7f4;
+        box-sizing: border-box;
+        width: 100%;
+        @include mixins.responsive-property(height, 43, 68);
+        &::placeholder {
+            color: $gray;
+        }
+        &:hover {
+            cursor: pointer;
+            background-color: #f4f0e9;
+        }
+        &:focus {
+            background-color: #f4f0e9;
+            border-color: $gray;
+            outline: none;
+        }
+        &_type_select {
+            @include mixins.responsive-property(height, 46, 68);
+            @include mixins.appearance-none;
+            background-image: url('/src/assets/images/icons/ic-dropdown.svg');
+            background-repeat: no-repeat;
+            background-position: right mixins.calc-property(10, 20) center;
+            @include mixins.responsive-property(padding-right, 36, 46);
+            @media (min-width: 1024px) {
+                background-position: right 20px center;
+            }
+            &::-ms-expand {
+                display: none;
+            }
+            &:required:invalid {
+                color: $gray;
+                .form__select-item {
+                    color: $black;
+                }
+            }
+        }
+        &_type_date {
+            @include mixins.appearance-none;
+            text-transform: uppercase;
+            max-width: 100%;
+            &::-webkit-calendar-picker-indicator {
+                opacity: 0;
+            }
+            &:invalid::-webkit-datetime-edit {
+                color: $gray;
+                @include mixins.responsive-property(letter-spacing, -0.6, -0.4);
+            }
+        }
+        &_type_textarea {
+            vertical-align: top;
+            @include mixins.responsive-property(height, 132, 152);
+            resize: none;
+        }
+    }
+    &__radio-group {
+        display: flex;
+        @include mixins.responsive-property(gap, 30, 31);
+    }
+    &__button-group {
+        display: flex;
+        @include mixins.responsive-property(gap, 10, 30);
+    }
+    &__button {
+        @include mixins.responsive-property(width, 134, 235);
+    }
+}

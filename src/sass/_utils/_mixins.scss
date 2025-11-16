@@ -1,0 +1,130 @@
+@use 'sass:map';
+@use 'sass:math';
+@use './variables' as *;
+
+/*
+Расчет значения свойства на промежуточных экранах
+- $min: значение свойства на минимальном размере экрана
+- $max: значение свойства на максимальном размере экрана
+- $screen-min: минимальный размер экрана
+- $screen-max: максимальный размер экрана
+*/
+@function calc-property(
+    $min,
+    $max,
+    $screen-min: $screen-s,
+    $screen-max: $screen-m
+) {
+    $range: $max - $min;
+    $screen-range: $screen-max - $screen-min;
+    $multiplier: calc($range / $screen-range);
+    @return calc(#{$min}px + (#{$multiplier} * (100vw - #{$screen-min}px)));
+}
+
+/*
+Установка адаптивного свойства
+- $property: свойство
+- $min: значение свойства на минимальном размере экрана
+- $max: значение свойства на максимальном размере экрана
+- $screen-min: минимальный размер экрана
+- $screen-max: максимальный размер экрана
+*/
+@mixin responsive-property(
+    $property,
+    $min,
+    $max,
+    $screen-min: $screen-s,
+    $screen-max: $screen-m
+) {
+    #{$property}: calc-property($min, $max, $screen-min, $screen-max);
+    @media ( min-width: #{ $screen-max }px ) {
+        #{ $property }: #{$max}px;
+    }
+    @media ( max-width: #{ $screen-min }px ) {
+        #{ $property }: #{$min}px;
+    }
+}
+
+/*
+Установка адаптивного текста
+- $text-min: мап со значениями свойст font-size, line-height, letter-spacing текста на минимальном размере экрана
+- $text-max: мап со значениями свойст font-size, line-height, letter-spacing текста на максимальном размере экрана
+- $screen-min: минимальный размер экрана
+- $screen-max: максимальный размер экрана
+*/
+@mixin responsive-text(
+    $text-min,
+    $text-max,
+    $screen-min: $screen-s,
+    $screen-max: $screen-m
+) {
+    $font-max: map.get($text-max, 'font-size');
+    $font-min: map.get($text-min, 'font-size');
+    @include responsive-property(
+        font-size,
+        $font-min,
+        $font-max,
+        $screen-min,
+        $screen-max
+    );
+
+    $height-max: calc($font-max * map.get($text-max, 'line-height') / 100);
+    $height-min: calc($font-min * map.get($text-min, 'line-height') / 100);
+    @include responsive-property(
+        line-height,
+        math.round($height-min),
+        math.round($height-max),
+        $screen-min,
+        $screen-max
+    );
+
+    $spacing-max: calc($font-max * map.get($text-max, 'letter-spacing') / 100);
+    $spacing-min: calc($font-min * map.get($text-min, 'letter-spacing') / 100);
+
+    @include responsive-property(
+        letter-spacing,
+        $spacing-min,
+        $spacing-max,
+        $screen-min,
+        $screen-max
+    );
+}
+
+/*
+Установка адаптивного свойства
+- $property: свойство
+- $value-s: значение на мобильном экране 
+- $value-m: значение на экране ноутбука 
+- $value-l: значение на экране компьютера
+*/
+@mixin values($property, $value-s, $value-m, $value-l) {
+    @include responsive-property($property, $value-s, $value-m);
+    @media ( min-width: #{ $screen-m }px ) {
+        @include responsive-property(
+            $property,
+            $value-m,
+            $value-l,
+            $screen-m,
+            $screen-l
+        );
+    }
+}
+
+/*
+Отображение элемента на заданном экране
+- $display: значение свойства display элемента
+- $screen: размер экрана 
+*/
+@mixin visible($display, $screen: $screen-m) {
+    display: none;
+    @media ( min-width: #{ $screen }px ) {
+        display: $display;
+    }
+}
+
+// Отключение стандартного оформления
+@mixin appearance-none() {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

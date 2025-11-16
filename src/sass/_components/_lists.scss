@@ -1,0 +1,40 @@
+@use '../_utils/variables' as *;
+@use '../_utils/mixins';
+
+// меню
+.menu {
+    &__list {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0;
+        @include mixins.responsive-property(gap, 30, 50, $screen-m, $screen-l);
+    }
+    &__link {
+        text-underline-offset: 6px;
+        &:hover {
+            text-decoration-line: underline;
+        }
+    }
+}
+
+.list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    &__item {
+        position: relative;
+        @include mixins.responsive-property(padding-left, 24, 30);
+        &::before {
+            content: '•';
+            position: absolute;
+            @include mixins.responsive-property(left, 9, 12);
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #ffffff;
+        }
+    }
+}

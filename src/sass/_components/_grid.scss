@@ -1,0 +1,59 @@
+@use '../_utils/variables' as *;
+@use '../_utils/mixins';
+
+.grid {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    &__cell {
+        width: 100%;
+        justify-self: center;
+        &_span_2 {
+            @media (min-width: $screen-m-px) {
+                grid-column: span 2;
+            }
+        }
+        &_show_m {
+            @include mixins.visible(block);
+        }
+        &_show_l {
+            @include mixins.visible(block, $screen-l);
+        }
+    }
+    &_col_2 {
+        @media (min-width: $screen-m-px) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    &_col_3 {
+        @media (min-width: $screen-m-px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (min-width: $screen-l-px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+    &_col_2-4 {
+        grid-template-columns: 1fr 1fr;
+        @media (min-width: $screen-m-px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @media (min-width: $screen-l-px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+    &_col_3-5 {
+        grid-template-columns: 1fr 1fr 1fr;
+        @media (min-width: $screen-m-px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        @media (min-width: $screen-l-px) {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+    }
+    &_col_mix {
+        display: flex;
+        flex-direction: column;
+    }
+}

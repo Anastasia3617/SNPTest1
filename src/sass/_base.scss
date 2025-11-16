@@ -1,0 +1,112 @@
+@use './_utils/variables' as *;
+@use './_utils/mixins';
+
+// высота шапки
+$header-height-px: 88px;
+
+// расстояние между блоками страницы
+$gap-s: 75;
+$gap: 135;
+
+.container-scroll {
+    scroll-behavior: smooth;
+}
+
+// страница
+.page {
+    margin: 0;
+    background: #f9f7f4;
+    color: $black;
+    &__header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $header-height-px;
+    }
+    &__footer {
+        @include mixins.responsive-property(margin-top, $gap-s, $gap);
+    }
+}
+
+// рабочая область
+.wrapper {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    @include mixins.values(max-width, 318, 918, 1170);
+}
+
+// шапка
+.header {
+    color: #ffffff;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    &__wrapper {
+        @include mixins.values(max-width, 320, 910, 1168);
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    &__menu {
+        @include mixins.visible(flex);
+    }
+    &_fixed {
+        color: $black;
+        z-index: 1000;
+        position: fixed;
+        background: rgba(243, 239, 232, 0.6);
+        backdrop-filter: blur(54px);
+        .header__logo {
+            filter: brightness(0) saturate(100%) invert(7%) sepia(6%)
+                saturate(5195%) hue-rotate(188deg) brightness(95%) contrast(87%);
+        }
+    }
+}
+
+// логотип
+.logo {
+    @include mixins.responsive-property(width, 133, 181.84);
+    @include mixins.responsive-property(height, 22, 30.24);
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+// основное содержимое
+.main {
+    display: flex;
+    flex-direction: column;
+    @include mixins.responsive-property(gap, $gap-s, $gap);
+    &__promo {
+        padding-top: $header-height-px;
+        @include mixins.values(height, 488, 831, 830);
+    }
+    &__tours,
+    &__story,
+    &__tour-creator,
+    &__reviews {
+        margin-top: -$header-height-px;
+        padding-top: $header-height-px;
+    }
+}
+
+// футер
+.footer {
+    background-color: #f4f0e9;
+    @include mixins.responsive-property(padding, 21, 30);
+    &__ineer {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        justify-content: space-between;
+        align-items: center;
+        @media (min-width: 860px) {
+            flex-direction: row;
+        }
+    }
+}
