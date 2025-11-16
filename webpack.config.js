@@ -10,9 +10,10 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name]_[contenthash].js',
+        filename: 'index.js',
         clean: true,
         assetModuleFilename: 'assets/[name][ext]',
+        publicPath: '/SNPTest1/',
     },
     module: {
         rules: [
@@ -45,7 +46,7 @@ module.exports = {
             patterns: [{ from: 'src/assets', to: 'assets' }],
         }),
         new MiniCssExtractPlugin({
-            filename: '[name]_[contenthash].css',
+            filename: 'style.css',
             chunkFilename: '[id].css',
         }),
     ],

@@ -4,7 +4,8 @@
     "description": "First test task",
     "main": "index.js",
     "scripts": {
-        "build": "webpack --config webpack.config.js"
+        "build": "webpack --config webpack.config.js",
+        "deploy": "gh-pages -d dist"
     },
     "keywords": [],
     "author": "Anastasia",
@@ -20,6 +21,7 @@
     },
     "devDependencies": {
         "copy-webpack-plugin": "^13.0.1",
+        "gh-pages": "^6.3.0",
         "mini-css-extract-plugin": "^2.9.4",
         "prettier": "^3.6.2"
     }
