@@ -192,7 +192,7 @@
   cursor: pointer;
 }
 .radio:checked {
-  background-image: url("/src/assets/images/icons/ic-ellipse.svg");
+  background-image: url("assets/images/icons/ic-ellipse.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: calc(9px + 0.0045180723 * (100vw - 360px));
@@ -246,7 +246,7 @@
   cursor: pointer;
 }
 .checkbox:checked {
-  background-image: url("/src/assets/images/icons/ic-check.svg");
+  background-image: url("assets/images/icons/ic-check.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: calc(9px + 0.0060240964 * (100vw - 360px));
@@ -570,7 +570,7 @@
   z-index: -2;
 }
 .wrapper-card_hover_ic-search::before {
-  background-image: url("/src/assets/images/icons/ic-search.svg");
+  background-image: url("assets/images/icons/ic-search.svg");
   background-size: calc(60px + 0.0451807229 * (100vw - 360px));
 }
 @media (min-width: 1024px) {
@@ -634,31 +634,31 @@
   background-color: #f4f0e9;
 }
 .wrapper-card_bg_tour-1::before {
-  background-image: url("/src/assets/images/tour_cards/tour-1.jpg");
+  background-image: url("assets/images/tour_cards/tour-1.jpg");
 }
 .wrapper-card_bg_tour-2::before {
-  background-image: url("/src/assets/images/tour_cards/tour-2.jpg");
+  background-image: url("assets/images/tour_cards/tour-2.jpg");
 }
 .wrapper-card_bg_tour-3::before {
-  background-image: url("/src/assets/images/tour_cards/tour-3.jpg");
+  background-image: url("assets/images/tour_cards/tour-3.jpg");
 }
 .wrapper-card_bg_tour-4::before {
-  background-image: url("/src/assets/images/tour_cards/tour-4.jpg");
+  background-image: url("assets/images/tour_cards/tour-4.jpg");
 }
 .wrapper-card_bg_tour-5::before {
-  background-image: url("/src/assets/images/tour_cards/tour-5.jpg");
+  background-image: url("assets/images/tour_cards/tour-5.jpg");
 }
 .wrapper-card_bg_tour-6::before {
-  background-image: url("/src/assets/images/tour_cards/tour-6.jpg");
+  background-image: url("assets/images/tour_cards/tour-6.jpg");
 }
 .wrapper-card_bg_story-1::before {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/src/assets/images/story_photo/story-photo-1.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("assets/images/story_photo/story-photo-1.png");
 }
 .wrapper-card_bg_story-2::before {
-  background-image: url("/src/assets/images/story_photo/story-photo-2.png");
+  background-image: url("assets/images/story_photo/story-photo-2.png");
 }
 .wrapper-card_bg_story-3::before {
-  background-image: url("/src/assets/images/story_photo/story-photo-3.png");
+  background-image: url("assets/images/story_photo/story-photo-3.png");
 }
 
 .card-tour {
@@ -1199,7 +1199,7 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("/src/assets/images/icons/ic-dropdown.svg");
+  background-image: url("assets/images/icons/ic-dropdown.svg");
   background-repeat: no-repeat;
   background-position: right calc(10px + 0.015060241 * (100vw - 360px)) center;
   padding-right: calc(36px + 0.015060241 * (100vw - 360px));
@@ -1312,7 +1312,7 @@
 }
 
 .promo {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), url("/src/assets/images/background-header.png");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), url("assets/images/background-header.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
